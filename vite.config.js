@@ -1,7 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
+const base = process.env.NODE_ENV === 'production' ? '/tic-tac-toe/' : '/';
+
 export default defineConfig({
+  base,
   plugins: [react()],
-})
+});
